@@ -1,6 +1,5 @@
 #include <stdlib.h>
 #include <stdio.h>
-#include <sys/stat.h>
 #include <fcntl.h>
 #include <unistd.h>
 #include <errno.h>
@@ -32,7 +31,7 @@ int main() {
     close(fd);
 
     int nums[10];
-    fd = open("rand_nums", O_RDONLY, 0664);
+    fd = open("rand_nums", O_RDONLY, 0644);
     printf("\nReading numbers from file...\n");
     read(fd, nums, sizeof(nums));
 
